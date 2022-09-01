@@ -44,6 +44,17 @@ function validateGuess(guess){
     }
 }
 
+function displayGuesses(guess){
+    userInput.value = '';
+    guessSlot.innerHTML += `${guess}  `;
+    numGuesses++
+    remaining.innerHTML = `${11 - numGuesses}  `;
+}
+
+function displayMessage(message){
+        lowOrHi.innerHTML = `<h1>${message}</h1>`
+}
+
 function checkGuess(guess){
     //Display clue if guess is too high or too low
     if (guess === randomNumber){
@@ -54,17 +65,6 @@ function checkGuess(guess){
     } else if (guess > randomNumber) {
         displayMessage(`Too High! Try again!`);
     }
-}
-
-function displayGuesses(guess){
-    userInput.value = '';
-    guessSlot.innerHTML += `${guess}  `;
-    numGuesses++
-    remaining.innerHTML = `${11 - numGuesses}  `;
-}
-
-function displayMessage(message){
-        lowOrHi.innerHTML = `<h1>${message}</h1>`
 }
 
 function endGame(){
